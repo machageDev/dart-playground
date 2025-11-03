@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:playgraund_dart/screen/login_screen.dart';
 import 'bloc/login_bloc.dart';
 import 'repository/auth_repository.dart';
-import 'screen/login_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -20,8 +21,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'BLoC Login Demo',
       home: BlocProvider(
-        // Provide LoginBloc to LoginScreen
-        create: (context) => LoginBloc(authRepository, authRepository: null),
+        //  Pass the repository correctly (positional argument only)
+        create: (context) => LoginBloc(authRepository),
         child: const LoginScreen(),
       ),
     );
