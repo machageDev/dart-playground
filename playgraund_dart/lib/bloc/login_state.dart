@@ -11,7 +11,7 @@ class LoginSuccess extends LoginState {}
 class LoginFailure extends LoginState{
   late final String message;
 // constructor to show error message
-loginFailure(this.message) {
+LoginFailure(this.message) {
   // TODO: implement loginFailure
   throw UnimplementedError();
 }
