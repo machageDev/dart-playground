@@ -1,32 +1,34 @@
-// the file that connects events + repository+ states
-import'package:flutter_bloc/flutter_bloc.dart';
+// login_bloc.dart
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'login_event.dart';
 import 'login_state.dart';
 import '../repository/auth_repository.dart';
 
-// bloc is the brain of the app it takes events from ui and map them to states
-class LoginBloc extends Bloc<LoginEvent,LoginState> {
+// Bloc is the brain of the app. It takes events from the UI and maps them to states.
+class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final AuthRepository authRepository;
-  // constructor
-  //  start with initial state is LoginInitial
-  LoginBloc({required this.authRepository}) : super(LoginInitial()) {
-    // mapping events to states
+
+  // Constructor — starts with the initial state
+  LoginBloc(this.authRepository) : super(LoginInitial()) {
+    // Mapping events to states
     on<LoginButtonPressed>((event, emit) async {
-      emit(LoginLoading());
+      emit(LoginLoading()); // show loading state
+
       try {
-        // call the login method from auth repository
+        // Call the login method from AuthRepository
         final isSuccess = await authRepository.login(
-            username: event.username, password: event.password);
+          event.username,
+          event.password,
+        );
+
         if (isSuccess) {
-          emit(LoginSuccess());
+          emit(LoginSuccess()); // success state
         } else {
-          emit(LoginFailure('Invalid username or password'));
+          emit(LoginFailure('Invalid email or password'));
         }
       } catch (e) {
-        emit(LoginFailure(e.toString()));
+        emit(LoginFailure(e.toString())); // error state
       }
     });
   }
-
 }
-
