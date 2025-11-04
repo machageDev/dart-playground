@@ -6,4 +6,6 @@ class RegisterFailure extends RegisterState{
   final String error;
 
   RegisterFailure({required this.error});
+
+  get message => null;
 }

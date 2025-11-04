@@ -21,7 +21,7 @@ class AuthRepository {
   }
 
   // Simulate API registration
-  Future<bool> register(String name, String email, String password) async {
+  Future<bool> register(String name, String email, String password, {required String email, required String password}) async {
     await Future.delayed(const Duration(seconds: 2));
 
     // For now, let's accept any non-empty input as successful registration
