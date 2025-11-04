@@ -52,6 +52,29 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 40),
+                  const SizedBox(height: 20),
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    const Text("Don't have an account? "),
+    GestureDetector(
+      onTap: () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => const RegisterScreen()),
+        );
+      },
+      child: const Text(
+        "Register",
+        style: TextStyle(
+          color: Colors.blue,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
+  ],
+),
+
 
                   // Email Field
                   TextField(
