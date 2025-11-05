@@ -14,14 +14,10 @@ class AuthRepository {
     }
   }
  
-  // Simulate API login
-  Future<bool> login(String email, String password) async {
-    await Future.delayed(const Duration(seconds: 2));
-    return email == 'admin@gmail.com' && password == '123456';
-  }
+
 
   // Simulate API registration
-  Future<bool> register(String name, String email, String password, {required String email, required String password}) async {
+  Future<bool> register(String name, String email, String password ) async {
     await Future.delayed(const Duration(seconds: 2));
 
     // For now, let's accept any non-empty input as successful registration
