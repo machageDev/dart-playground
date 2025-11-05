@@ -26,12 +26,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
         padding: const EdgeInsets.all(20.0),
         child: Center(
           child: BlocProvider(
-            create: (context) => RegisterBloc(AuthRepository(), authRepository: AuthRepository()),
+            create: (context) => RegisterBloc(AuthRepository() , ),
             child: BlocConsumer<RegisterBloc, RegisterState>(
               listener: (context, state) {
                 if (state is RegisterSuccess) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('🎉 Registration Successful!')),
+                    const SnackBar(content: Text(' Registration Successful!')),
                   );
 
                   // Navigate to login after successful registration
