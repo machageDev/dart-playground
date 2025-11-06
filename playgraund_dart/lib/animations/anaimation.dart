@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:playgraund_dart/bottomnavigation/bottom_navigation.dart';
-import 'package:playgraund_dart/buttons/buttons.dart';
 
 void main() => runApp(MyApp());
 
@@ -138,6 +136,73 @@ class AnimatedBottomNavigationBar extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      controller: _scrollController,
+      itemCount: 20,
+      itemBuilder: (context, index) =>
+          ListTile(title: Text('🏠 Home Item $index')),
+    );
+  }
+}
+
+class SearchScreen extends StatefulWidget {
+  const SearchScreen({super.key});
+  @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+  final TextEditingController _controller = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          TextField(
+            controller: _controller,
+            decoration: const InputDecoration(
+              labelText: 'Search...',
+              border: OutlineInputBorder(),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 15,
+              itemBuilder: (context, index) =>
+                  ListTile(title: Text('🔍 Result $index')),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('👤 Profile Page', style: TextStyle(fontSize: 22)),
     );
   }
 }
