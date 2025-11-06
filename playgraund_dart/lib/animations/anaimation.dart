@@ -156,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
       controller: _scrollController,
       itemCount: 20,
       itemBuilder: (context, index) =>
-          ListTile(title: Text('🏠 Home Item $index')),
+          ListTile(title: Text(' Home Item $index')),
     );
   }
 }
@@ -188,7 +188,7 @@ class _SearchScreenState extends State<SearchScreen> {
             child: ListView.builder(
               itemCount: 15,
               itemBuilder: (context, index) =>
-                  ListTile(title: Text('🔍 Result $index')),
+                  ListTile(title: Text(' Result $index')),
             ),
           ),
         ],
@@ -202,7 +202,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('👤 Profile Page', style: TextStyle(fontSize: 22)),
+      child: Text(' Profile Page', style: TextStyle(fontSize: 22)),
     );
   }
 }
