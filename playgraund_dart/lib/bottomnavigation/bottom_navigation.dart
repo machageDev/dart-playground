@@ -67,20 +67,22 @@ class _BottomNavExampleState extends State<BottomNavExample> {
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('🏠 Home Screen', style: TextStyle(fontSize: 24)));
+    return Center(child: Text(' Home Screen', style: TextStyle(fontSize: 24)));
   }
 }
 
 class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('🔍 Search Screen', style: TextStyle(fontSize: 24)));
+    return Center(child: Text(' Search Screen', style: TextStyle(fontSize: 24)));
   }
 }
 
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('👤 Profile Screen', style: TextStyle(fontSize: 24)));
+    return Center(child: Text(' Profile Screen', style: TextStyle(fontSize: 24)));
   }
 }
+
+
