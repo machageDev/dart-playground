@@ -1,11 +1,64 @@
+import 'package:flutter/material.dart';
 
+void main() => runApp(MyApp());
 
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomeScreen(),
+    );
+  }
+}
 
-TextButton(
-  style: ButtonStyle(
-    foregraoundColor: MaterialStateProperty.all<Color>(Colors.blue),
-  ),
-  onPressed: () {},
-  child: const Text('Text Button'),
-  )
-)
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Home')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              child: Text("Go to Profile"),
+              onPressed: () {
+                // navigation here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()),
+                );
+              },
+            ),
+            SizedBox(height: 20),
+            OutlinedButton(
+              child: Text("Show Message"),
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Hello there!")),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Profile')),
+      body: Center(
+        child: ElevatedButton(
+          child: Text("Back to Home"),
+          onPressed: () {
+            Navigator.pop(context); // go back
+          },
+        ),
+      ),
+    );
+  }
+}
