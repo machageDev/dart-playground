@@ -26,5 +26,14 @@ class AuthRepository {
     }
     return false;
   }
+    Future<void> forgotPassword(String email) async {
+    // Simulate API call delay
+    await Future.delayed(Duration(seconds: 2));
+
+    // Simulate success or failure
+    if (email == "fail@test.com") {
+      throw Exception("Email not found");
+    }
+  }
 }
 
