@@ -1,8 +1,8 @@
 // lib/bloc/forgot_password_bloc.dart
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:playgraund_dart/bloc/forgot_event.dart';
+import 'package:playgraund_dart/bloc/forgot_state.dart';
 import '../repository/auth_repository.dart';
-import 'forgot_password_event.dart';
-import 'forgot_password_state.dart';
 
 class ForgotPasswordBloc extends Bloc<ForgotPasswordEvent, ForgotPasswordState> {
   final AuthRepository authRepository;
