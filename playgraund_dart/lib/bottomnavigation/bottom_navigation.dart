@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,6 +16,8 @@ class MyApp extends StatelessWidget {
 }
 
 class BottomNavExample extends StatefulWidget {
+  const BottomNavExample({super.key});
+
   @override
   _BottomNavExampleState createState() => _BottomNavExampleState();
 }
@@ -65,6 +69,8 @@ class _BottomNavExampleState extends State<BottomNavExample> {
 
 // Individual Pages
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(child: Text(' Home Screen', style: TextStyle(fontSize: 24)));
@@ -72,6 +78,8 @@ class HomeScreen extends StatelessWidget {
 }
 
 class SearchScreen extends StatelessWidget {
+  const SearchScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(child: Text(' Search Screen', style: TextStyle(fontSize: 24)));
@@ -79,6 +87,8 @@ class SearchScreen extends StatelessWidget {
 }
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(child: Text(' Profile Screen', style: TextStyle(fontSize: 24)));

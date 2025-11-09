@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,6 +16,8 @@ class MyApp extends StatelessWidget {
 }
 
 class AnimatedBottomNavExample extends StatefulWidget {
+  const AnimatedBottomNavExample({super.key});
+
   @override
   State<AnimatedBottomNavExample> createState() =>
       _AnimatedBottomNavExampleState();
