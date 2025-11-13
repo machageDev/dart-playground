@@ -52,3 +52,15 @@ class ApiService {
     return response.statusCode == 200;
   }
 }
+
+  Future<User> getUser(int id) async {
+    final response = await http.get(Uri.parse('$baseUrl/users/$id'));
+
+    if (response.statusCode == 200) {
+      final json = jsonDecode(response.body);
+      return User.fromJson(json);  //  return a User object
+    } else {
+      throw Exception('Failed to load user');
+    }
+  }
+
