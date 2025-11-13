@@ -51,4 +51,11 @@ Future<bool> Login({required String email,required String email}) async  {
   }else {
     throw Exception('Failed to login ');
   }
+
+  class UserRepository {
+  final ApiService apiService;
+
+  UserRepository(this.apiService); //  dependency injected
+}
+
 }
