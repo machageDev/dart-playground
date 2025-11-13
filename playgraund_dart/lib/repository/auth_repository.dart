@@ -37,3 +37,18 @@ class AuthRepository {
   }
 }
 
+
+
+Future<bool> Login({required String email,required String email}) async  {
+  final response = await http.post(
+    Uri.parse('$baseUrl/login'),
+    body: {'email':email, 'password': password},
+
+  );
+  if (response.statusCode == 200) {
+    return true;
+
+  }else {
+    throw Exception('Failed to login ');
+  }
+}
