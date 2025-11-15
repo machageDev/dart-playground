@@ -9,3 +9,14 @@ class LoginButtonPressed extends LoginEvent {
   // constructor to recieve username and password
   LoginButtonPressed({required this.username, required this.password});
   }
+
+
+  on<LoginEvent>((event, emit) async {
+  emit(LoginLoading());
+  try {
+    final response = await repo.login(event.email, event.password);
+    emit(LoginSuccess(response));
+  } catch (e) {
+    emit(LoginFailure("Login failed"));
+  }
+});
