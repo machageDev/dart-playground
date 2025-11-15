@@ -96,3 +96,16 @@ class ProfileScreen extends StatelessWidget {
 }
 
 
+
+
+//bloc navigation example
+
+BlocListener<LoginBloc, LoginState>(
+  listener: (context, state) {
+    if (state is LoginSuccess) {
+      Navigator.pushNamed(context, '/home');
+    }
+  },
+  child: LoginScreen(),
+);
+
